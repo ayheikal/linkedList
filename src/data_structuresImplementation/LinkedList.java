@@ -117,6 +117,7 @@ public class LinkedList {
 		return true;
 		
 	}
+	/*********************************************************/
 	public static void printList(LinkedList list) {
 		if(isEmpty(list)) {System.out.println(" its empty");}
 		else {
@@ -127,6 +128,22 @@ public class LinkedList {
 			curNode=curNode.next;
 		}
 		}
+	}
+	/*******************************************************/
+	public static boolean search(LinkedList list,int data) {
+		Node cur=list.head;
+		if(isEmpty(list)) {
+			System.out.println("List is empty");
+			return false;
+		}
+		while(cur.next!=null) {
+			if(cur.data=data) {
+				return true;
+			}
+			cur=cur.next;
+		}
+		return false;
+		
 	}
 	
 	
@@ -141,6 +158,8 @@ public class LinkedList {
 		list.insert(list, 3);
 		list.insert(list, 2);
 		list.insert(list, 1);
+		//search for 2
+		System.out.println("searched is :"+ list.search(list, 2));
 		//delet head
 		list.delteHead(list);
 		//insert at head
